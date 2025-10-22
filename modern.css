@@ -97,7 +97,11 @@ nav .nav-wrapper {
   align-items: center;
   text-align: center;
   color: var(--text-color);
-  background-image: linear-gradient(135deg, #092248 0%, #163f7a 100%);
+  /* Combine a dark gradient with a hero image for the parallax background. The first
+     linear-gradient adds a tinted overlay for readability and the second
+     image reference pulls in the actual hero graphic. */
+  /* Use a semi-transparent gradient overlay to ensure the hero image is visible yet text remains legible */
+  background-image: linear-gradient(135deg, rgba(9, 34, 72, 0.7) 0%, rgba(22, 63, 122, 0.7) 100%), url("images/hero-bg.png");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
