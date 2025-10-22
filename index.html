@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conroy – Portfolio</title>
+  <!-- Google Fonts for a clean, modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Link to the modern stylesheet -->
+  <link rel="stylesheet" href="modern.css">
+</head>
+<body>
+  <!-- Fixed navigation bar with anchor links and a parallax toggle -->
+  <nav id="navbar">
+    <div class="container nav-wrapper">
+      <a href="#home" class="logo">Conroy</a>
+      <!-- Parallax toggle: hidden checkbox controlled by the label -->
+      <input type="checkbox" id="toggle-parallax" class="parallax-toggle">
+      <label for="toggle-parallax" class="toggle-label" title="Toggle parallax effect">Disable Parallax</label>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero section with a parallax background -->
+  <header id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm Conroy</h1>
+      <p>Graphic Designer &amp; 3D Artist</p>
+      <a href="#portfolio" class="btn">View My Work</a>
+    </div>
+  </header>
+
+  <!-- About section -->
+  <section id="about" class="section">
+    <div class="container about-section">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I am a graphic designer and 3D artist creating compelling visuals that bridge imagination and reality. This portfolio showcases my passion for visual storytelling and my proficiency in contemporary design tools.</p>
+        <p>With experience in creating logos, branding collateral, motion graphics and immersive 3D environments, I aim to deliver visually striking work that communicates a clear message and engages the audience.</p>
+      </div>
+      <div class="about-img">
+        <!-- Placeholder portrait image. You can replace this with your own photo. -->
+        <img src="../placeholder_light_gray_block.png" alt="Placeholder portrait">
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio section with three sample projects -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="../placeholder_light_gray_block.png" alt="Project 1">
+          <h3>Project One</h3>
+          <p>A conceptual 3D composition exploring geometry and space.</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="../placeholder_light_gray_block.png" alt="Project 2">
+          <h3>Project Two</h3>
+          <p>An abstract humanoid figure created with polygonal shapes and vibrant colors.</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="../placeholder_light_gray_block.png" alt="Project 3">
+          <h3>Project Three</h3>
+          <p>A digital sculpture of intertwined forms illuminated by neon light.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact section with a simple form -->
+  <section id="contact" class="section">
+    <div class="container contact-section">
+      <h2>Contact</h2>
+      <p>Interested in working together? Feel free to reach out using the form below or connect with me on social media.</p>
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer section showing the current year dynamically -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Conroy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Load the JavaScript for interactivity -->
+  <script src="script.js"></script>
+</body>
+</html>

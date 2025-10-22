@@ -1,0 +1,346 @@
+/*
+ * Stylesheet for the graphic & 3D artist portfolio website.
+ * The design uses a dark theme with a contrasting accent colour and
+ * incorporates a parallax hero section. Media queries ensure the
+ * layout adapts gracefully to small screens.
+ */
+
+/* Import the font defined in the HTML. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Root variables for easy theme customisation */
+:root {
+  --primary-color: #ff6f61;        /* warm accent colour for buttons and highlights */
+  --background-color: #0c0c0d;     /* dark background for contrast */
+  --text-color: #f5f5f5;           /* light text colour for readability */
+  --overlay-colour: rgba(0, 0, 0, 0.55); /* dark overlay for the hero image */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff867b;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 200;
+  background: rgba(12, 12, 13, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.navbar .logo {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar .nav-links a {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-color);
+  position: relative;
+}
+
+.navbar .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero section with parallax */
+.parallax {
+  height: 100vh;
+  background-image: url('images/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Dark overlay on the parallax to improve text contrast */
+.parallax::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--overlay-colour);
+  z-index: 0;
+}
+
+/* Hero content styling */
+.hero-content {
+  z-index: 1;
+  max-width: 80%;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* Primary buttons */
+.btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #d85c55;
+}
+
+/* Parallax toggle button */
+#toggle-parallax {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 250;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#toggle-parallax:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Section general styling */
+.section {
+  padding: 90px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+/* About */
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Portfolio */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+.portfolio-item .overlay h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.portfolio-item .overlay p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Skills */
+.skills-list {
+  /* Remove default bullets and lay items out flexibly */
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skills-list li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 18px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Contact */
+.contact p {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+  color: #b5b5b5;
+}
+
+.contact button {
+  align-self: flex-start;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.85rem;
+  background: #0a0a0b;
+  color: #888;
+}
+
+/* Disable parallax background attachment when the body has the no-parallax class */
+body.no-parallax .parallax {
+  background-attachment: scroll;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .navbar {
+    padding: 15px 20px;
+  }
+  .nav-links {
+    gap: 15px;
+  }
+}
