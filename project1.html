@@ -51,5 +51,21 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script>
+  const gallery = document.querySelector('.gallery-grid');
+  const gridBtn = document.getElementById('grid-view-btn');
+  const listBtn = document.getElementById('list-view-btn');
+
+  // Set grid view by removing the list-view class
+  gridBtn.addEventListener('click', () => {
+    gallery.classList.remove('list-view');
+  });
+
+  // Set list view by adding the list-view class
+  listBtn.addEventListener('click', () => {
+    gallery.classList.add('list-view');
+  });
+</script>
+
 </body>
 </html>
