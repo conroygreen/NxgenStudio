@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project One – Conroy Portfolio</title>
+  <!-- Use the same font and stylesheet as the main site -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modern.css">
+</head>
+<body>
+  <!-- Navigation reused from the main page for consistency -->
+  <nav id="navbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">Conroy</a>
+      <input type="checkbox" id="toggle-parallax" class="parallax-toggle">
+      <label for="toggle-parallax" class="toggle-label" title="Toggle parallax effect">Disable Parallax</label>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Hero section for the project with a custom background image -->
+  <header class="hero" style="background-image: linear-gradient(135deg, rgba(9,34,72,0.7) 0%, rgba(22,63,122,0.7) 100%), url('images/project1-1.png');">
+    <div class="hero-content">
+      <h1>Project One</h1>
+      <p>Geometric City</p>
+    </div>
+  </header>
+  <section class="section">
+    <div class="container">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="images/project1-1.png" alt="Geometric city artwork 1">
+        <img src="images/project1-2.png" alt="Geometric city artwork 2">
+        <img src="images/project1-3.png" alt="Geometric city artwork 3">
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Conroy. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
